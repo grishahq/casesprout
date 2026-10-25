@@ -7,15 +7,40 @@
   },
   "plan": "complete",
   "implementation": "complete",
-  "validation": "passed_focused_and_clean_wheel",
-  "github_release": "repository_created_release_pending",
+  "validation": {
+    "state": "passed",
+    "focused_tests": "397 passed, 1 skipped, 1 upstream deprecation warning",
+    "contract_tests": "39 passed",
+    "clean_release_suite": "5 passed",
+    "mutations_detected": 3,
+    "github_ci": {
+      "conclusion": "success",
+      "databaseId": 40225514781,
+      "headBranch": "v0.1.0a1",
+      "headSha": "cbbfe608e89e492a4189a0da5a998cf886461749",
+      "status": "completed",
+      "url": "https://github.com/grishahq/casesprout/actions/runs/40225514781"
+    }
+  },
+  "github_release": {
+    "state": "published_prerelease",
+    "url": "https://github.com/grishahq/casesprout/releases/tag/v0.1.0a1",
+    "tag": "v0.1.0a1",
+    "commit": "cbbfe608e89e492a4189a0da5a998cf886461749",
+    "readback": "evidence/release-readback.json",
+    "downloaded_artifact_verification": "verified_5_exported_tests_passed"
+  },
   "campaign": {
-    "prepared": false,
+    "prepared": true,
     "scheduled": false,
     "published": false,
     "concept_assets": 2,
     "real_screenshot": "campaign/assets/03-real-selection-report.png",
-    "chart": "campaign/assets/04-equal-budget-experiment.png"
+    "chart": "campaign/assets/04-equal-budget-experiment.png",
+    "linkedin_posts": 5,
+    "x_threads": 5,
+    "x_posts_per_thread": 4,
+    "length_checks": "evidence/campaign-length-checks.json"
   },
   "evidence": [
     "IMPLEMENTATION_PLAN.md",
@@ -30,8 +55,9 @@
   ],
   "blockers": [],
   "next_actions": [
-    "Implement selection and explicit review/export contract",
-    "Run controlled experiment and validation",
-    "Publish alpha release and prepare campaign"
+    "Finish downloaded artifact suite verification",
+    "Inspect native queues and reserve slots under shared lock",
+    "Schedule available native formats and record exact blockers",
+    "Upload complete campaign asset archive"
   ]
 }

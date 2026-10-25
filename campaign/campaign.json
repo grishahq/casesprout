@@ -1,0 +1,193 @@
+{
+  "project": "CaseSprout",
+  "language": "English",
+  "release": "https://github.com/grishahq/casesprout/releases/tag/v0.1.0a1",
+  "timezone": "Asia/Dubai",
+  "platform_limits": {
+    "linkedin": 3000,
+    "x_standard": 280,
+    "method": "Conservative weighted count; URLs=23; ASCII=1; non-ASCII=2",
+    "sources": [
+      "https://www.linkedin.com/help/linkedin/answer/a527226",
+      "https://help.x.com/en/using-x/types-of-posts",
+      "https://help.x.com/en/using-x/how-to-post"
+    ]
+  },
+  "image_provenance": "image-provenance.json",
+  "scheduling_policy": "At most three primary items/week/platform across all five projects. Reserve under shared lock after inspecting native queue. X thread counts as one item.",
+  "items": [
+    {
+      "beat": 1,
+      "audience": "Agent engineers and QA developers with growing trace archives",
+      "hook": "A folder full of traces does not protect the next release.",
+      "evidence": [
+        "burr/casesprout/support.py",
+        "burr/casesprout/support_policy.json",
+        "evidence/demo/reviewed.json"
+      ],
+      "image": "assets/01-trace-is-not-test.png",
+      "alt": "Conceptual paper-cut illustration: an archive of execution traces becomes five different seedlings beneath a human review card. Headline: A trace is not a test. This is an illustration, not a product screenshot.",
+      "cta": "Run the support demo and inspect the security case's observed and approved outcomes.",
+      "linkedin": "A folder full of traces does not protect the next release.\n\nConsider a support agent that handles FAQs, refunds and account-security requests. It has plenty of history. But if the regression suite only exercises the common FAQ route, a change that automatically resets an account can slip through.\n\nI built CaseSprout to make the gap between collecting executions and testing behavior easier to inspect.\n\nThe offline demo records 110 actual Burr executions, including an intentionally wrong historical security response. The important detail: that old response is NOT the expected answer. A separately specified policy requires human security review.\n\nCaseSprout selects representative runs, removes exact duplicates, redacts named fields and stops before export until each selected case has an approved expected outcome and a stated basis. The developer still owns the acceptance policy.\n\nThis is an independent Apache Burr fork. Burr already has persistence, replay and manual test creation; the addition is batch selection and an explicit review/export workflow.\n\nRun the support demo and compare the observed security response with its approved expectation: https://github.com/grishahq/casesprout\n\nAlpha scope: controlled local JSON traces and deterministic adapters. More collected history does not automatically mean more useful regression coverage.",
+      "x": [
+        "1/4 A folder full of agent traces does not protect the next release. If five sampled tests all follow the FAQ route, an account-security regression can remain invisible.",
+        "2/4 CaseSprout turns complete Burr run history into selected, reviewed pytest cases. The demo includes a deliberately WRONG historical security answer. It must not become the expected answer by default.",
+        "3/4 A separate policy requires human security review. Selection proposes cases; a developer supplies expected outcomes and their basis. Coverage and correctness remain different questions.",
+        "4/4 Try the offline support demo and inspect observed vs approved outcomes: https://github.com/grishahq/casesprout\nIndependent Apache Burr fork, public alpha. No model keys required."
+      ],
+      "linkedin_characters": 1355,
+      "x_weighted_characters_conservative": [
+        169,
+        202,
+        188,
+        167
+      ],
+      "state": {
+        "prepared": true,
+        "scheduled": false,
+        "published": false
+      },
+      "scheduled_ids": [],
+      "published_urls": []
+    },
+    {
+      "beat": 2,
+      "audience": "QA/platform engineers designing agent regression suites",
+      "hook": "Copying history into assertions can preserve the bug.",
+      "evidence": [
+        "burr/casesprout/core.py",
+        "casesprout_docs/CONTRACT.md",
+        "tests/casesprout/test_contract.py"
+      ],
+      "image": "assets/02-choose-paths.png",
+      "alt": "Conceptual paper-cut garden with a busy path, quieter branches, a gardener placing green stepping stones and an amber lantern. Headline: Choose paths. Review outcomes. It illustrates selection and review, not measured coverage.",
+      "cta": "Read the contract and suggest a within-path failure the current strategy would miss.",
+      "linkedin": "Copying history into assertions can preserve the bug.\n\nThe straightforward trace-to-test approach is tempting: choose some runs, save their outputs, assert those outputs next time. It is also a way to turn an old failure into a permanent acceptance criterion.\n\nCaseSprout keeps two decisions explicit.\n\nFirst, which executions deserve limited review time? The alpha groups complete runs by action path and error class, takes representatives of rare observed groups, then fills the remaining budget deterministically. Exact duplicates do not consume the budget twice.\n\nSecond, what should those executions do? That answer comes from a developer-approved policy or specification, not the historical observation. Export requires the expectation, reviewer and basis for every selected case.\n\nThe tradeoff is deliberate. Path selection exposes structural variety, but can miss different semantic failures on the same path. Named-field redaction reduces some exposure, but does not scrub free text or guarantee that a redacted input will still replay correctly.\n\nI would rather make those limits inspectable than hide them behind a coverage percentage.\n\nRead the v1 contract and suggest a within-path failure it would miss: https://github.com/grishahq/casesprout/blob/main/casesprout_docs/CONTRACT.md\n\nCaseSprout is an independent Apache Burr fork; manual trace-to-test creation already exists upstream. The new work is focused batch selection, review and export.",
+      "x": [
+        "1/4 Trace -> saved output -> assertion sounds useful. It can also freeze a historical bug into your test oracle. The hard part is deciding what should have happened.",
+        "2/4 CaseSprout separates selection from approval. It favors rare observed path/error groups, deduplicates exact runs and uses deterministic tie-breaking. Expected outcomes are supplied separately.",
+        "3/4 Tradeoff: path variety is not semantic coverage. Two inputs can follow the same path and fail differently. Redacting a required input can also change replay behavior. Both limits are explicit.",
+        "4/4 Read the contract and tell me which within-path case you would add: https://github.com/grishahq/casesprout/blob/main/casesprout_docs/CONTRACT.md"
+      ],
+      "linkedin_characters": 1457,
+      "x_weighted_characters_conservative": [
+        165,
+        196,
+        196,
+        95
+      ],
+      "state": {
+        "prepared": true,
+        "scheduled": false,
+        "published": false
+      },
+      "scheduled_ids": [],
+      "published_urls": []
+    },
+    {
+      "beat": 3,
+      "audience": "Burr users and agent engineers who want a runnable example",
+      "hook": "Here is the complete loop: history, selection, review, executable tests.",
+      "evidence": [
+        "evidence/demo/suite/report.html",
+        "evidence/exported-suite.log",
+        "evidence/mutation-verification.json",
+        "scripts/casesprout_verify_mutants.py"
+      ],
+      "image": "assets/03-real-selection-report.png",
+      "alt": "Actual browser screenshot of CaseSprout's generated selection report. Five approved cases cover intake to outage, escalation, security, refund and FAQ. The report records 110 input runs, 100 unique runs, 10 duplicates removed and a budget of five.",
+      "cta": "Run the demo, then replace the adapter with a small deterministic part of your own app.",
+      "linkedin": "Here is the complete loop: history, selection, review, executable tests.\n\nCaseSprout's support demo runs the actual Burr state machine with local tracking. It creates FAQ, refund, security, escalation and controlled-backend-outage histories. There are no model calls or customer records.\n\nThe selector turns 110 runs into 100 unique executions and proposes five cases. The generated report shows their paths, outcome classes, review status and observed coverage. The attached image is a real screenshot of that report.\n\nThe demo then applies an independently written acceptance-policy fixture. The historical security output is intentionally wrong, so blindly copying it would fail the point of the exercise.\n\nThe approved export contains JSON fixtures, a small pytest module and an HTML report. Its adapter reruns the workflow with the selected redacted input and checks the approved output or exception class.\n\nFive exported tests pass against the fixed implementation. Separate executions of the exported suite fail against each of the three predeclared regressions: automatic refund approval, automatic security reset and swallowed outage errors.\n\nStart with the offline demo, then replace the adapter with a small deterministic part of your own app: https://github.com/grishahq/casesprout\n\nThe alpha supports one complete invocation per local JSON trace log. It does not reconstruct arbitrary application state or make nondeterministic answers exact.",
+      "x": [
+        "1/4 Real demo, no model keys: Burr records 110 controlled support runs. CaseSprout finds 100 unique executions and selects five paths for review. The screenshot is the generated report, not a mockup.",
+        "2/4 The demo's acceptance policy is specified separately. An intentionally wrong historical security response is replaced by the required human-review outcome before export.",
+        "3/4 Export = JSON fixtures + pytest + an HTML selection report. Five cases pass on the fixed workflow. The same exported suite fails on each of three predeclared injected regressions.",
+        "4/4 Run it locally, then write a trusted adapter for your app: https://github.com/grishahq/casesprout\nAlpha limit: complete local JSON runs and exact assertions. No automatic oracle."
+      ],
+      "linkedin_characters": 1455,
+      "x_weighted_characters_conservative": [
+        199,
+        173,
+        183,
+        167
+      ],
+      "state": {
+        "prepared": true,
+        "scheduled": false,
+        "published": false
+      },
+      "scheduled_ids": [],
+      "published_urls": []
+    },
+    {
+      "beat": 4,
+      "audience": "Evaluation and QA engineers comparing sampling strategies",
+      "hook": "Five tests each. Different observed coverage.",
+      "evidence": [
+        "evidence/demo/results.json",
+        "casesprout_docs/METHODOLOGY.md",
+        "scripts/casesprout_chart.py",
+        "evidence/demo/random-suite/cases.json"
+      ],
+      "image": "assets/04-equal-budget-experiment.png",
+      "alt": "Chart plotted from saved controlled-run results. With five cases each, CaseSprout covers five of five observed paths and detects three of three injected regressions; random sampling with seed seven covers two paths and detects one regression. The chart states that the synthetic workload targets rare paths and does not establish general superiority.",
+      "cta": "Reproduce the experiment, change the corpus mix or mutations, and compare the outcome.",
+      "linkedin": "Five tests each. Different observed coverage.\n\nI compared CaseSprout's path/error selection with seeded random sampling on the same 100 unique controlled Burr executions. Each method got a budget of five cases. The protocol fixed the corpus, expected-outcome policy, three injected regressions and random seed before measurement.\n\nCaseSprout covered 5 of 5 observed paths and detected 3 of 3 injected regressions. Random sampling with seed 7 covered 2 paths and detected 1 regression.\n\nOne random seed is not a general result. Across seeds 0-999, random samples averaged 1.876 observed paths and 0.708 detected regressions; one sample caught all three.\n\nThe most important caveat is in the experiment's design: the corpus is heavily weighted toward FAQs, while the mutations target rare refund, security and outage behavior. This deliberately favors a strategy that represents rare paths. It shows a concrete failure mode of a small random sample, not universal superiority.\n\nThe chart is plotted from saved results, and both the selected and random exported suites include reports whose coverage can be checked against their cases. All inputs are synthetic; all runs use the real deterministic Burr runtime.\n\nReproduce it, change the corpus mix or mutations, and compare: https://github.com/grishahq/casesprout/blob/main/casesprout_docs/METHODOLOGY.md\n\nObserved path coverage is useful evidence. It is not proof of agent correctness.",
+      "x": [
+        "1/4 Equal budget: five cases from the same 100 unique controlled Burr runs. CaseSprout covered 5 observed paths and caught 3 injected regressions. Seed-7 random covered 2 paths and caught 1.",
+        "2/4 To expose seed sensitivity, I also ran random seeds 0-999: mean 1.876 paths covered and 0.708 regressions detected. One sample caught all three. Raw results and methodology are saved.",
+        "3/4 The caveat matters: this synthetic corpus is FAQ-heavy and the predeclared mutations target rare paths. Path selection is favored by design. This is a reproducible example, not a general win-rate claim.",
+        "4/4 Change the mix or the mutants and rerun it: https://github.com/grishahq/casesprout/blob/main/casesprout_docs/METHODOLOGY.md\nMore observed coverage does not prove correctness."
+      ],
+      "linkedin_characters": 1434,
+      "x_weighted_characters_conservative": [
+        190,
+        187,
+        206,
+        122
+      ],
+      "state": {
+        "prepared": true,
+        "scheduled": false,
+        "published": false
+      },
+      "scheduled_ids": [],
+      "published_urls": []
+    },
+    {
+      "beat": 5,
+      "audience": "Agent engineers assessing an open-source tool and potential contributors",
+      "hook": "CaseSprout's public alpha is available, with a demo you can rerun.",
+      "evidence": [
+        "evidence/release-readback.json",
+        "evidence/release-verification.json",
+        "README.md",
+        "UPSTREAM.md"
+      ],
+      "image": "assets/05-verified-release.png",
+      "alt": "Actual browser screenshot of the public GitHub CaseSprout 0.1.0a1 prerelease: alpha title, tag and commit, upstream attribution and controlled experiment notes.",
+      "cta": "Download the wheel, run the five-test demo, and open an issue with a sanitized minimal trace example.",
+      "linkedin": "CaseSprout's public alpha is available, with a demo you can rerun.\n\nIt is an independent, attributed Apache Burr fork focused on turning complete local execution histories into selected and reviewed regression cases. The Burr runtime, persistence, tracing and trace-viewer source remain. Burr's existing manual test creation is credited directly.\n\nThe release includes a wheel, source distribution, controlled evidence bundle and checksums. The installed demo needs Python, pytest and the tracking-client extra; no model API key is required. A clean installation from the downloaded release wheel runs the exported five-case suite.\n\nQuickstart: create a fresh Python environment, download the wheel, install it with the tracking-client extra plus pytest, run `python -m burr.casesprout.demo /tmp/casesprout-demo`, then `python -m pytest /tmp/casesprout-demo/suite -q`. Exact install commands are in the release notes.\n\nThis is 0.1.0a1, an alpha. It supports complete single-invocation local JSON logs and trusted application adapters. The developer approves expected behavior; field redaction is not anonymization; coverage refers to observed runs. The viewer remains upstream source with its normal build process.\n\nv0.2 targets a browser review interface, richer redaction configuration and CI comparison. A further format will follow actual user needs.\n\nDownload the release, run the demo and bring a sanitized minimal example of the trace shape you need next: https://github.com/grishahq/casesprout/releases/tag/v0.1.0a1",
+      "x": [
+        "1/4 CaseSprout 0.1.0a1 is a public alpha: selected Burr traces -> reviewed expectations -> runnable pytest. Independent Apache Burr fork; runtime, history and attribution retained.",
+        "2/4 Release assets: wheel, source, controlled evidence and checksums. Fresh environment + tracking-client extra + pytest. No model keys. Download: https://github.com/grishahq/casesprout/releases/tag/v0.1.0a1",
+        "3/4 Run: python -m burr.casesprout.demo /tmp/casesprout-demo\nThen: python -m pytest /tmp/casesprout-demo/suite -q\nFive reviewed cases. Use a fresh output directory.",
+        "4/4 Alpha limits: complete local JSON runs, trusted adapters, exact assertions. Developers own expected outcomes. Bring a sanitized minimal trace example; v0.2 focuses on review and CI comparison."
+      ],
+      "linkedin_characters": 1523,
+      "x_weighted_characters_conservative": [
+        180,
+        170,
+        164,
+        196
+      ],
+      "state": {
+        "prepared": true,
+        "scheduled": false,
+        "published": false
+      },
+      "scheduled_ids": [],
+      "published_urls": []
+    }
+  ]
+}

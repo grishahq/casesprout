@@ -13,5 +13,26 @@
     }
   ],
   "inspection": "Both original outputs visually inspected. English headlines are correct; no fake UI, measured results, logos or adoption claims. Conceptual illustrations only.",
-  "visual_direction": "Warm ivory, forest green, muted amber, tactile paper cut, generous margins. Use real browser screenshots for software, matplotlib from results.json for experiments."
+  "visual_direction": "Warm ivory, forest green, muted amber, tactile paper cut, generous margins. Use real browser screenshots for software, matplotlib from results.json for experiments.",
+  "evidence_assets": [
+    {
+      "asset": "assets/03-real-selection-report.png",
+      "kind": "actual browser screenshot",
+      "source": "http://127.0.0.1:8763/evidence/demo/suite/report.html",
+      "generated": false
+    },
+    {
+      "asset": "assets/04-equal-budget-experiment.png",
+      "kind": "matplotlib chart",
+      "data": "evidence/demo/results.json",
+      "script": "scripts/casesprout_chart.py",
+      "generated": false
+    },
+    {
+      "asset": "assets/05-verified-release.png",
+      "kind": "actual browser screenshot",
+      "source": "https://github.com/grishahq/casesprout/releases/tag/v0.1.0a1",
+      "generated": false
+    }
+  ]
 }

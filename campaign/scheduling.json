@@ -1,0 +1,16 @@
+{
+  "project": "CaseSprout",
+  "timezone": "Asia/Dubai",
+  "prepared": true,
+  "scheduled": false,
+  "published": false,
+  "state": "awaiting_shared_social_lock",
+  "observations": [
+    "Chrome Person profile has signed-in LinkedIn and X sessions; not yet independently verified for CaseSprout.",
+    "Native queue inspection and reservations deferred while another project holds the live shared social-publish.lock. No sibling tab has been manipulated."
+  ],
+  "reservations": [],
+  "scheduled_ids": [],
+  "published_urls": [],
+  "blockers": ["Shared social lock is currently owned by toolcrop; do other work and retry exclusive acquisition later."]
+}
