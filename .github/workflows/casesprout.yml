@@ -1,0 +1,19 @@
+name: CaseSprout contracts
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install '.[tracking-client]' pytest pytest-asyncio
+      - run: python -m pytest tests/casesprout tests/core/test_action.py tests/core/test_application.py tests/core/test_graph.py tests/core/test_state.py tests/core/test_validation.py tests/tracking/test_local_tracking_client.py tests/tracking/test_common_models.py -q
+      - run: python -m burr.casesprout.demo /tmp/casesprout-demo
+      - run: python -m pytest /tmp/casesprout-demo/suite -q

@@ -3,3 +3,9 @@ Copyright 2025-2026 The Apache Software Foundation
 
 This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
+
+CaseSprout independent fork additions
+Copyright 2026 CaseSprout contributors.
+CaseSprout is maintained independently and is not an Apache Software Foundation release.
+Modified distribution metadata and documentation; added burr/casesprout selection,
+review, export and controlled support workflow modules, tests and campaign evidence.

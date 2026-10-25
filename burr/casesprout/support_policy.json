@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "description": "Independently specified support acceptance policy; fixed before measurement.",
+  "cases": {
+    "faq": {"disposition": "self_service", "error": null},
+    "refund": {"disposition": "refund_review", "error": null},
+    "security": {"disposition": "human_security_review", "error": null},
+    "escalation": {"disposition": "human_escalation", "error": null},
+    "outage": {"disposition": null, "error": "ConnectionError"}
+  },
+  "mutations": ["refund_auto_approve", "security_auto_reset", "outage_swallowed"],
+  "sample_size": 5,
+  "random_seed": 7,
+  "sensitivity_seeds": 1000,
+  "corpus": {"faq": 80, "refund": 12, "security": 4, "escalation": 3, "outage": 1},
+  "duplicate_faq_runs": 10
+}

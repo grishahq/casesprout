@@ -37,6 +37,7 @@ permissions:
 
 jobs:
   stale-prs:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     steps:
       - name: Mark stale and close inactive PRs

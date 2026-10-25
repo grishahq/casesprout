@@ -1,0 +1,220 @@
+{
+  "schema": "casesprout/v1",
+  "report": {
+    "input_runs": 110,
+    "unique_runs": 100,
+    "duplicates_removed": 10,
+    "budget": 5,
+    "selected_runs": 5,
+    "observed_paths": 5,
+    "selected_paths": 5,
+    "observed_path_error_strata": 5,
+    "selected_path_error_strata": 5,
+    "uncovered_strata": [],
+    "selection": "rare observed path/error strata, then SHA-256 order",
+    "coverage_scope": "observed complete runs only; not all reachable graph paths",
+    "redacted_fields": [
+      "api_key",
+      "email",
+      "password",
+      "secret",
+      "token"
+    ],
+    "redaction_limit": "field-key replacement only; review free text and replay semantics before sharing"
+  },
+  "cases": [
+    {
+      "inputs": {
+        "request": {
+          "topic": "outage",
+          "ticket": "outage-000",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "outage"
+      ],
+      "error": "ConnectionError",
+      "observed": {
+        "request": {
+          "topic": "outage",
+          "ticket": "outage-000",
+          "email": "[REDACTED]"
+        }
+      },
+      "id": "8e6d450d42eca2cc5895",
+      "fingerprint": "243f6ca02eb2caab509407e6ac696c6a98fbaf2bc623fcc170833ab660d3449f",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": null,
+          "error": "ConnectionError"
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "escalation",
+          "ticket": "escalation-000",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "escalation"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "escalation",
+          "ticket": "escalation-000",
+          "email": "[REDACTED]"
+        },
+        "disposition": "human_escalation"
+      },
+      "id": "a3e8e23ba7b164c79d58",
+      "fingerprint": "698f03026a0edb3492dd5732e1dece5f4b042b7360111cfbd158bcc5ef8dc516",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "escalation",
+              "ticket": "escalation-000",
+              "email": "[REDACTED]"
+            },
+            "disposition": "human_escalation"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "security",
+          "ticket": "security-003",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "security"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "security",
+          "ticket": "security-003",
+          "email": "[REDACTED]"
+        },
+        "disposition": "auto_reset"
+      },
+      "id": "1f41606237ce30f7fc93",
+      "fingerprint": "ab444ea3446346b6ea6b7ea51308812a96b4524171e565eceb2a767c82ba8f64",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "security",
+              "ticket": "security-003",
+              "email": "[REDACTED]"
+            },
+            "disposition": "human_security_review"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "refund",
+          "ticket": "refund-004",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "refund"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "refund",
+          "ticket": "refund-004",
+          "email": "[REDACTED]"
+        },
+        "disposition": "refund_review"
+      },
+      "id": "1e1cc45287125cc67d9a",
+      "fingerprint": "db3f64a452b0cb0387264cfac294d8975d154f0d3a05966484cf12af2c17d820",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "refund",
+              "ticket": "refund-004",
+              "email": "[REDACTED]"
+            },
+            "disposition": "refund_review"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-040",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "faq"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-040",
+          "email": "[REDACTED]"
+        },
+        "disposition": "self_service"
+      },
+      "id": "01181661b04e7f614ec2",
+      "fingerprint": "13ae589774005fc9c68576e4fba58e870e8c9bcdace1038612fb49d46a2b0c63",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "faq",
+              "ticket": "faq-040",
+              "email": "[REDACTED]"
+            },
+            "disposition": "self_service"
+          },
+          "error": null
+        }
+      }
+    }
+  ],
+  "runner": "burr.casesprout.support:replay_security_bug"
+}

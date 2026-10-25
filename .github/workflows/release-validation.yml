@@ -52,6 +52,7 @@ permissions:
 
 jobs:
   check-paths:
+    if: github.repository == 'apache/burr'
     name: "Release Validation / check-paths"
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -78,7 +79,7 @@ jobs:
   build-artifacts:
     name: "Release Validation / build-artifacts"
     needs: check-paths
-    if: needs.check-paths.outputs.should_run == 'true'
+    if: github.repository == 'apache/burr' && (needs.check-paths.outputs.should_run == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
@@ -174,7 +175,7 @@ jobs:
   install-and-smoke:
     name: "Release Validation / install-and-smoke"
     needs: [check-paths, build-artifacts]
-    if: needs.check-paths.outputs.should_run == 'true'
+    if: github.repository == 'apache/burr' && (needs.check-paths.outputs.should_run == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
@@ -220,7 +221,7 @@ jobs:
   bare-install:
     name: "Release Validation / bare-install"
     needs: [check-paths, build-artifacts]
-    if: needs.check-paths.outputs.should_run == 'true'
+    if: github.repository == 'apache/burr' && (needs.check-paths.outputs.should_run == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -258,7 +259,7 @@ jobs:
   sdist-wheel-equivalence:
     name: "Release Validation / sdist-wheel-equivalence"
     needs: [check-paths, build-artifacts]
-    if: needs.check-paths.outputs.should_run == 'true'
+    if: github.repository == 'apache/burr' && (needs.check-paths.outputs.should_run == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -327,7 +328,7 @@ jobs:
   summary:
     name: "Release Validation / summary"
     needs: [check-paths, build-artifacts, install-and-smoke, bare-install, sdist-wheel-equivalence]
-    if: always()
+    if: github.repository == 'apache/burr' && (always())
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:

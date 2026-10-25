@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "original_assets": [
+    {
+      "asset": "assets/01-trace-is-not-test.png",
+      "prompt": "Use case: ads-marketing\nAsset type: original conceptual launch illustration for CaseSprout, landscape\nPrimary request: show a large archive of pale paper execution traces becoming a small carefully tended garden of five distinct green test seedlings, each supported by a simple path-like stem. A human hand holds a blank review card above the seedlings, suggesting deliberate review. This is an editorial metaphor for turning agent run history into reviewed regression tests.\nStyle: premium tactile paper-cut illustration, warm ivory, forest green, muted amber, subtle grain, restrained engineering publication aesthetic. Spacious composition with generous margins.\nText (verbatim): \"A trace is not a test.\"\nConstraints: only that English headline, no charts, no numbers, no fake interface, no logos, no testimonial or performance claims.",
+      "source": "Generated images are saved to /Users/g/.codex/generated_images/01a1746d-c28f-7a42-b11d-c02222a5cc96 as /Users/g/.codex/generated_images/01a1746d-c28f-7a42-b11d-c02222a5cc96/exec-437349a4-ef43-4c8f-a338-1d826b50307e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "asset": "assets/02-choose-paths.png",
+      "prompt": "Use case: ads-marketing\nAsset type: original conceptual CaseSprout launch artwork, landscape\nPrimary request: an editorial paper-cut illustration showing branching paths in a small ivory garden. Most pale footprints travel along one broad path, while a human gardener deliberately places three green stepping stones on quieter branches, one ending at a small amber warning lantern. Convey deliberate coverage and human judgment, not automatic correctness.\nStyle: premium tactile paper-cut illustration matching a warm ivory, forest-green and muted-amber engineering publication aesthetic, subtle paper texture, clean restrained composition and generous margin.\nText (verbatim): \"Choose paths. Review outcomes.\"\nConstraints: English headline only. No statistics, charts, UI, logos, badges, fake metrics or claims of adoption. Conceptual illustration, not product evidence.",
+      "source": "Generated images are saved to /Users/g/.codex/generated_images/01a1746d-c28f-7a42-b11d-c02222a5cc96 as /Users/g/.codex/generated_images/01a1746d-c28f-7a42-b11d-c02222a5cc96/exec-7cc289fe-293f-492a-be54-9f6b34852bc3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ],
+  "inspection": "Both original outputs visually inspected. English headlines are correct; no fake UI, measured results, logos or adoption claims. Conceptual illustrations only.",
+  "visual_direction": "Warm ivory, forest green, muted amber, tactile paper cut, generous margins. Use real browser screenshots for software, matplotlib from results.json for experiments."
+}

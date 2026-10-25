@@ -1,0 +1,44 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><title>CaseSprout selection</title><style>body{font:17px system-ui;max-width:1100px;margin:48px auto;background:#f5f3ed;color:#173d36}td,th{padding:14px;text-align:left;border-bottom:1px solid #bac9bf}pre{padding:24px;background:white;white-space:pre-wrap}</style><h1>CaseSprout · Selection report</h1><p>Observed coverage. Expected outcomes require explicit review.</p><table><tr><th>Case</th><th>Execution path</th><th>Outcome class</th><th>Review</th></tr><tr><td>7388917c3eb475db1cdc</td><td>intake → security</td><td>success</td><td>approved</td></tr><tr><td>110438aef23fae0d5e89</td><td>intake → faq</td><td>success</td><td>approved</td></tr><tr><td>3d0616eaa55c8eb732d4</td><td>intake → faq</td><td>success</td><td>approved</td></tr><tr><td>8bbbf7bd039faba783c8</td><td>intake → faq</td><td>success</td><td>approved</td></tr><tr><td>dd13494572cf36930140</td><td>intake → faq</td><td>success</td><td>approved</td></tr></table><pre>{
+  &quot;input_runs&quot;: 110,
+  &quot;unique_runs&quot;: 100,
+  &quot;duplicates_removed&quot;: 10,
+  &quot;budget&quot;: 5,
+  &quot;selected_runs&quot;: 5,
+  &quot;observed_paths&quot;: 5,
+  &quot;selected_paths&quot;: 2,
+  &quot;observed_path_error_strata&quot;: 5,
+  &quot;selected_path_error_strata&quot;: 2,
+  &quot;uncovered_strata&quot;: [
+    [
+      [
+        &quot;intake&quot;,
+        &quot;escalation&quot;
+      ],
+      null
+    ],
+    [
+      [
+        &quot;intake&quot;,
+        &quot;outage&quot;
+      ],
+      &quot;ConnectionError&quot;
+    ],
+    [
+      [
+        &quot;intake&quot;,
+        &quot;refund&quot;
+      ],
+      null
+    ]
+  ],
+  &quot;selection&quot;: &quot;seeded random without replacement from same unique population&quot;,
+  &quot;coverage_scope&quot;: &quot;observed complete runs only; not all reachable graph paths&quot;,
+  &quot;redacted_fields&quot;: [
+    &quot;api_key&quot;,
+    &quot;email&quot;,
+    &quot;password&quot;,
+    &quot;secret&quot;,
+    &quot;token&quot;
+  ],
+  &quot;redaction_limit&quot;: &quot;field-key replacement only; review free text and replay semantics before sharing&quot;
+}</pre></html>

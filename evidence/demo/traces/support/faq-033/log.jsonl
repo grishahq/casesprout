@@ -1,0 +1,4 @@
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.266402","action":"intake","inputs":{"request":{"topic":"faq","ticket":"faq-033","email":"synthetic@example.invalid"}},"sequence_id":0}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.266483","action":"intake","result":{},"exception":null,"state":{"__SEQUENCE_ID":0,"request":{"topic":"faq","ticket":"faq-033","email":"synthetic@example.invalid"},"__PRIOR_STEP":"intake"},"sequence_id":0}
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.266584","action":"faq","inputs":{},"sequence_id":1}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.266662","action":"faq","result":{},"exception":null,"state":{"__SEQUENCE_ID":1,"request":{"topic":"faq","ticket":"faq-033","email":"synthetic@example.invalid"},"__PRIOR_STEP":"faq","disposition":"self_service"},"sequence_id":1}

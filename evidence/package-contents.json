@@ -1,0 +1,11 @@
+{
+  "wheel": "casesprout_burr-0.1.0a1-py3-none-any.whl",
+  "license_files": [
+    "casesprout_burr-0.1.0a1.dist-info/licenses/DISCLAIMER",
+    "casesprout_burr-0.1.0a1.dist-info/licenses/LICENSE-wheel",
+    "casesprout_burr-0.1.0a1.dist-info/licenses/NOTICE"
+  ],
+  "support_policy_included": true,
+  "core_runtime_included": true,
+  "viewer_source_retained_in_git": true
+}

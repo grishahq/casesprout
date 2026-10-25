@@ -41,7 +41,7 @@ permissions:
 
 jobs:
   triage-issues:
-    if: github.event_name == 'issues'
+    if: github.repository == 'apache/burr' && (github.event_name == 'issues')
     runs-on: ubuntu-latest
     steps:
       - name: Add status/needs-triage to new issues
@@ -57,7 +57,7 @@ jobs:
             });
 
   label-prs:
-    if: github.event_name == 'pull_request_target'
+    if: github.repository == 'apache/burr' && (github.event_name == 'pull_request_target')
     runs-on: ubuntu-latest
     steps:
       - name: Apply area/* labels based on changed files
@@ -68,7 +68,7 @@ jobs:
           sync-labels: false
 
   check-mergeable:
-    if: github.event_name == 'pull_request_target'
+    if: github.repository == 'apache/burr' && (github.event_name == 'pull_request_target')
     runs-on: ubuntu-latest
     steps:
       - name: Check for merge conflicts

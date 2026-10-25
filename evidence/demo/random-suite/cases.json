@@ -1,0 +1,250 @@
+{
+  "schema": "casesprout/v1",
+  "report": {
+    "input_runs": 110,
+    "unique_runs": 100,
+    "duplicates_removed": 10,
+    "budget": 5,
+    "selected_runs": 5,
+    "observed_paths": 5,
+    "selected_paths": 2,
+    "observed_path_error_strata": 5,
+    "selected_path_error_strata": 2,
+    "uncovered_strata": [
+      [
+        [
+          "intake",
+          "escalation"
+        ],
+        null
+      ],
+      [
+        [
+          "intake",
+          "outage"
+        ],
+        "ConnectionError"
+      ],
+      [
+        [
+          "intake",
+          "refund"
+        ],
+        null
+      ]
+    ],
+    "selection": "seeded random without replacement from same unique population",
+    "coverage_scope": "observed complete runs only; not all reachable graph paths",
+    "redacted_fields": [
+      "api_key",
+      "email",
+      "password",
+      "secret",
+      "token"
+    ],
+    "redaction_limit": "field-key replacement only; review free text and replay semantics before sharing"
+  },
+  "cases": [
+    {
+      "inputs": {
+        "request": {
+          "topic": "security",
+          "ticket": "security-002",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "security"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "security",
+          "ticket": "security-002",
+          "email": "[REDACTED]"
+        },
+        "disposition": "auto_reset"
+      },
+      "id": "7388917c3eb475db1cdc",
+      "fingerprint": "349d12d52f5babe771f4dc3009b1237878f7c6913b0fb07ee1570d391bbf24e5",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "security",
+              "ticket": "security-002",
+              "email": "[REDACTED]"
+            },
+            "disposition": "human_security_review"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-016",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "faq"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-016",
+          "email": "[REDACTED]"
+        },
+        "disposition": "self_service"
+      },
+      "id": "110438aef23fae0d5e89",
+      "fingerprint": "deefcb480a1eeeaf94b33473f3b91919a0c16e3746eaa0e87c4c99f7feafcb38",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "faq",
+              "ticket": "faq-016",
+              "email": "[REDACTED]"
+            },
+            "disposition": "self_service"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-038",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "faq"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-038",
+          "email": "[REDACTED]"
+        },
+        "disposition": "self_service"
+      },
+      "id": "3d0616eaa55c8eb732d4",
+      "fingerprint": "1a14472ece359580aac2e6b69383249b003fdad9eb53d2dbd7f815d08f21998b",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "faq",
+              "ticket": "faq-038",
+              "email": "[REDACTED]"
+            },
+            "disposition": "self_service"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-031",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "faq"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-031",
+          "email": "[REDACTED]"
+        },
+        "disposition": "self_service"
+      },
+      "id": "8bbbf7bd039faba783c8",
+      "fingerprint": "0077796591ebe2c2da7e9a283d8bd22655b982a67bebe0df8dc4fc41954a8e53",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "faq",
+              "ticket": "faq-031",
+              "email": "[REDACTED]"
+            },
+            "disposition": "self_service"
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "inputs": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-006",
+          "email": "[REDACTED]"
+        }
+      },
+      "path": [
+        "intake",
+        "faq"
+      ],
+      "error": null,
+      "observed": {
+        "request": {
+          "topic": "faq",
+          "ticket": "faq-006",
+          "email": "[REDACTED]"
+        },
+        "disposition": "self_service"
+      },
+      "id": "dd13494572cf36930140",
+      "fingerprint": "be69a5f168c8ac4fe2c06085a194f57bc7742dea447a3a6513694e06be5efd1d",
+      "approval": {
+        "approved": true,
+        "reviewer": "controlled-demo-policy-v1",
+        "basis": "support_policy.json, specified independently; not historical output",
+        "expected": {
+          "output": {
+            "request": {
+              "topic": "faq",
+              "ticket": "faq-006",
+              "email": "[REDACTED]"
+            },
+            "disposition": "self_service"
+          },
+          "error": null
+        }
+      }
+    }
+  ],
+  "runner": "burr.casesprout.support:replay"
+}

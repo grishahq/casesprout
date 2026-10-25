@@ -1,0 +1,4 @@
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.392061","action":"intake","inputs":{"request":{"topic":"refund","ticket":"refund-004","email":"synthetic@example.invalid"}},"sequence_id":0}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.392127","action":"intake","result":{},"exception":null,"state":{"__SEQUENCE_ID":0,"request":{"topic":"refund","ticket":"refund-004","email":"synthetic@example.invalid"},"__PRIOR_STEP":"intake"},"sequence_id":0}
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.392213","action":"refund","inputs":{},"sequence_id":1}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.392238","action":"refund","result":{},"exception":null,"state":{"__SEQUENCE_ID":1,"request":{"topic":"refund","ticket":"refund-004","email":"synthetic@example.invalid"},"__PRIOR_STEP":"refund","disposition":"refund_review"},"sequence_id":1}

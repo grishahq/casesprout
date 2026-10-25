@@ -1,0 +1,38 @@
+{
+  "policy_sha256": "541a5f0cc7901539a2495cd2c97bd10e99b00efbb445f691df58e23d2494275c",
+  "corpus_runs": 110,
+  "unique_runs": 100,
+  "method": "Equal size without replacement from same unique population; no expectations used for selection",
+  "random_seed": 7,
+  "sample_size": 5,
+  "casesprout": {
+    "sample_size": 5,
+    "observed_paths_covered": 5,
+    "injected_regressions_detected": 3,
+    "detected_mutations": [
+      "refund_auto_approve",
+      "security_auto_reset",
+      "outage_swallowed"
+    ]
+  },
+  "seeded_random": {
+    "sample_size": 5,
+    "observed_paths_covered": 2,
+    "injected_regressions_detected": 1,
+    "detected_mutations": [
+      "security_auto_reset"
+    ]
+  },
+  "random_sensitivity": {
+    "seeds": 1000,
+    "mean_paths_covered": 1.876,
+    "mean_regressions_detected": 0.708,
+    "all_regressions_detected_samples": 1
+  },
+  "limits": [
+    "Synthetic controlled deterministic Burr runs; not model or production results",
+    "Mutations target rare known paths by design; path selection is favored by this workload",
+    "Observed paths only; no guarantee of semantic, branch or unseen-path coverage",
+    "Exact output equality suits this demo, not every nondeterministic agent"
+  ]
+}

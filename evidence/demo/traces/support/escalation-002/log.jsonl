@@ -1,0 +1,4 @@
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.420672","action":"intake","inputs":{"request":{"topic":"escalation","ticket":"escalation-002","email":"synthetic@example.invalid"}},"sequence_id":0}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.420728","action":"intake","result":{},"exception":null,"state":{"__SEQUENCE_ID":0,"request":{"topic":"escalation","ticket":"escalation-002","email":"synthetic@example.invalid"},"__PRIOR_STEP":"intake"},"sequence_id":0}
+{"type":"begin_entry","start_time":"2026-10-25T23:06:30.420846","action":"escalation","inputs":{},"sequence_id":1}
+{"type":"end_entry","end_time":"2026-10-25T23:06:30.420868","action":"escalation","result":{},"exception":null,"state":{"__SEQUENCE_ID":1,"request":{"topic":"escalation","ticket":"escalation-002","email":"synthetic@example.invalid"},"__PRIOR_STEP":"escalation","disposition":"human_escalation"},"sequence_id":1}

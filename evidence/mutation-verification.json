@@ -1,0 +1,14 @@
+{
+  "refund": {
+    "exit_code": 1,
+    "detected": true
+  },
+  "security": {
+    "exit_code": 1,
+    "detected": true
+  },
+  "outage": {
+    "exit_code": 1,
+    "detected": true
+  }
+}

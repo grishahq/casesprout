@@ -33,6 +33,7 @@ concurrency: ci-${{ github.ref }}
 
 jobs:
   docs:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     env:
       PR_PATH: pull/${{github.event.number}}

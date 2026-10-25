@@ -37,6 +37,7 @@ concurrency:
 
 jobs:
   build-docs:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
 
     steps:

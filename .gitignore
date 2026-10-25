@@ -205,3 +205,11 @@ examples/deployment/aws/terraform/*.tfplan
 
 # Claude Code session data
 .claude/
+
+# CaseSprout local validation artifacts
+.clean-venv/
+.clean-room/
+.release-venv/
+evidence/demo-before-review/
+evidence/release-download/
+evidence/*stderr.log

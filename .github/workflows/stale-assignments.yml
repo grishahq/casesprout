@@ -43,6 +43,7 @@ permissions:
 
 jobs:
   check-assignments:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     steps:
       - name: Check for stale assignments

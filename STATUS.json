@@ -1,0 +1,37 @@
+{
+  "project": "CaseSprout",
+  "language": "English",
+  "upstream": {
+    "url": "https://github.com/apache/burr",
+    "sha": "8bfd72689f1fbba4e858f7440dc77b764cd653b9"
+  },
+  "plan": "complete",
+  "implementation": "complete",
+  "validation": "passed_focused_and_clean_wheel",
+  "github_release": "repository_created_release_pending",
+  "campaign": {
+    "prepared": false,
+    "scheduled": false,
+    "published": false,
+    "concept_assets": 2,
+    "real_screenshot": "campaign/assets/03-real-selection-report.png",
+    "chart": "campaign/assets/04-equal-budget-experiment.png"
+  },
+  "evidence": [
+    "IMPLEMENTATION_PLAN.md",
+    "evidence/validation.log",
+    "evidence/contracts-final.log",
+    "evidence/clean-install.log",
+    "evidence/clean-suite.log",
+    "evidence/mutation-verification.json",
+    "evidence/demo/results.json",
+    "evidence/INDEPENDENT_REVIEW.md",
+    "evidence/package-contents.json"
+  ],
+  "blockers": [],
+  "next_actions": [
+    "Implement selection and explicit review/export contract",
+    "Run controlled experiment and validation",
+    "Publish alpha release and prepare campaign"
+  ]
+}

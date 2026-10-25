@@ -31,6 +31,7 @@ on:
 
 jobs:
   pre-commit:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -48,6 +49,7 @@ jobs:
         run: pre-commit run --all-files
 
   test:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -76,6 +78,7 @@ jobs:
           python -m pytest tests --ignore=tests/integrations/persisters --ignore=tests/integrations/test_bip0042_bedrock.py
 
   test-tracking-server-s3:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -99,6 +102,7 @@ jobs:
           python -m pytest tests/tracking/test_bip0042_s3_buffering.py -v
 
   test-bedrock:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -122,6 +126,7 @@ jobs:
           python -m pytest tests/integrations/test_bip0042_bedrock.py -v
 
   validate-examples:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -137,6 +142,7 @@ jobs:
           python -m pytest validate_examples.py
 
   test-persister-dbs:
+    if: github.repository == 'apache/burr'
     runs-on: ubuntu-latest
     services:
       mongodb:
