@@ -12,5 +12,18 @@
   "reservations": [],
   "scheduled_ids": [],
   "published_urls": [],
-  "blockers": ["Shared social lock is currently owned by toolcrop; do other work and retry exclusive acquisition later."]
+  "blockers": [
+    "Shared social lock is currently owned by toolcrop; do other work and retry exclusive acquisition later."
+  ],
+  "linkedin_account": {
+    "name": "Gregory Gvadzabia",
+    "url": "https://www.linkedin.com/in/gregogv/",
+    "verification": "Own profile shows Edit profile and self-view controls in a fresh CaseSprout-owned tab; no composer opened."
+  },
+  "x_account": {
+    "name": "Grisha",
+    "handle": "@grishahq",
+    "url": "https://x.com/grishahq",
+    "verification": "Fresh CaseSprout-owned tab shows Profile -> x.com/grishahq and Account menu @grishahq."
+  }
 }

@@ -40,7 +40,8 @@
     "linkedin_posts": 5,
     "x_threads": 5,
     "x_posts_per_thread": 4,
-    "length_checks": "evidence/campaign-length-checks.json"
+    "length_checks": "evidence/campaign-length-checks.json",
+    "scheduling_state": "awaiting_shared_lock"
   },
   "evidence": [
     "IMPLEMENTATION_PLAN.md",
@@ -51,7 +52,14 @@
     "evidence/mutation-verification.json",
     "evidence/demo/results.json",
     "evidence/INDEPENDENT_REVIEW.md",
-    "evidence/package-contents.json"
+    "evidence/package-contents.json",
+    "evidence/release-verification.json",
+    "evidence/release-ci-runs.json",
+    "evidence/github-ci.json",
+    "evidence/upstream-release-config.log",
+    "casesprout_docs/VALIDATION.md",
+    "campaign/campaign.json",
+    "campaign/image-provenance.json"
   ],
   "blockers": [],
   "next_actions": [

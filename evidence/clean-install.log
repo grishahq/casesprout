@@ -1,0 +1,15 @@
+Using Python 3.11.14 environment at: .clean-venv
+Resolved 11 packages in 463ms
+Prepared 1 package in 87ms
+Installed 11 packages in 5.44s
+ + annotated-types==0.8.0
+ + casesprout-burr==0.1.0a1 (from file:///Users/g/Documents/Projects/OPEN_SOURCE/casesprout/dist/casesprout_burr-0.1.0a1-py3-none-any.whl)
+ + iniconfig==2.3.1
+ + packaging==26.3
+ + pluggy==1.7.0
+ + pydantic==2.14.1
+ + pydantic-core==2.50.1
+ + pygments==2.21.0
+ + pytest==9.1.1
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4

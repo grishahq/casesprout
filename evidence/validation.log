@@ -1,0 +1,13 @@
+........................................................................ [ 18%]
+........................................................................ [ 36%]
+........................................................................ [ 54%]
+........................................................................ [ 72%]
+........................................................................ [ 90%]
+..............................s.......                                   [100%]
+=============================== warnings summary ===============================
+tracking/test_local_tracking_client.py::test_application_tracks_end_to_end
+  /Users/g/Documents/Projects/OPEN_SOURCE/casesprout/tests/tracking/test_local_tracking_client.py:100: PydanticDeprecatedSince20: The `parse_obj` method is deprecated; use `model_validate` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    app_model = ApplicationModel.parse_obj(graph_contents)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+397 passed, 1 skipped, 1 warning in 4.41s

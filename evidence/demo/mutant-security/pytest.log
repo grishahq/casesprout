@@ -1,0 +1,31 @@
+..F..                                                                    [100%]
+=================================== FAILURES ===================================
+________________ test_reviewed_execution[1f41606237ce30f7fc93] _________________
+
+case = {'inputs': {'request': {'topic': 'security', 'ticket': 'security-003', 'email': '[REDACTED]'}}, 'path': ['intake', 'se... {'request': {'topic': 'security', 'ticket': 'security-003', 'email': '[REDACTED]'}, 'disposition': 'auto_reset'}, ...}
+
+    @pytest.mark.parametrize("case", MANIFEST["cases"], ids=lambda c: c["id"])
+    def test_reviewed_execution(case):
+        module, name = MANIFEST["runner"].split(":")
+        runner = getattr(importlib.import_module(module), name)
+        expected = case["approval"]["expected"]
+        try:
+            output = runner(case["inputs"])
+        except Exception as exc:
+            actual = type(exc).__name__
+            qualified = type(exc).__module__ + "." + actual
+            assert expected["error"] in (actual, qualified), f"Unexpected error class: {actual}"
+        else:
+            assert expected["error"] is None, "Expected an exception but execution succeeded"
+>           assert output == expected["output"]
+E           AssertionError: assert {'request': {... 'auto_reset'} == {'request': {...urity_review'}
+E             
+E             Omitting 1 identical items, use -vv to show
+E             Differing items:
+E             {'disposition': 'auto_reset'} != {'disposition': 'human_security_review'}
+E             Use -v to get more diff
+
+evidence/demo/mutant-security/test_casesprout.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED evidence/demo/mutant-security/test_casesprout.py::test_reviewed_execution[1f41606237ce30f7fc93]
+1 failed, 4 passed in 0.38s
