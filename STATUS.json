@@ -41,7 +41,9 @@
     "x_threads": 5,
     "x_posts_per_thread": 4,
     "length_checks": "evidence/campaign-length-checks.json",
-    "scheduling_state": "awaiting_shared_lock"
+    "scheduling_state": "blocked_native_upload_and_x_readback",
+    "scheduling_evidence": "campaign/scheduling.json",
+    "native_scheduled_items": 0
   },
   "evidence": [
     "IMPLEMENTATION_PLAN.md",
@@ -61,11 +63,13 @@
     "campaign/campaign.json",
     "campaign/image-provenance.json"
   ],
-  "blockers": [],
+  "blockers": [
+    "LinkedIn native media upload rejected. Browser upload troubleshooting recommends enabling Allow access to file URLs in the ChatGPT Chrome extension; owner action requested before retry.",
+    "X native draft page returned a service/navigation error; no scheduled thread or persistent draft ID verified."
+  ],
   "next_actions": [
-    "Finish downloaded artifact suite verification",
-    "Inspect native queues and reserve slots under shared lock",
-    "Schedule available native formats and record exact blockers",
-    "Upload complete campaign asset archive"
+    "Owner enables the documented Chrome file-upload access or supplies another working authorized publishing route",
+    "Reacquire shared social lock, re-read queues, and retry media scheduling without duplicating unknown requests",
+    "Verify every native queue entry before marking scheduled"
   ]
 }

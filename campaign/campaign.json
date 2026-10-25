@@ -189,5 +189,12 @@
       "scheduled_ids": [],
       "published_urls": []
     }
-  ]
+  ],
+  "scheduling_evidence": "scheduling.json",
+  "state": {
+    "prepared": true,
+    "scheduled": false,
+    "published": false,
+    "blocker": "Native image upload rejected; X draft readback error. See scheduling.json."
+  }
 }

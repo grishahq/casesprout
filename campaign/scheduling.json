@@ -4,16 +4,68 @@
   "prepared": true,
   "scheduled": false,
   "published": false,
-  "state": "awaiting_shared_social_lock",
+  "state": "blocked_native_upload_and_x_readback",
   "observations": [
     "Chrome Person profile has signed-in LinkedIn and X sessions; not yet independently verified for CaseSprout.",
-    "Native queue inspection and reservations deferred while another project holds the live shared social-publish.lock. No sibling tab has been manipulated."
+    "Native queue inspection and reservations deferred while another project holds the live shared social-publish.lock. No sibling tab has been manipulated.",
+    "LinkedIn native queue independently read: one unrelated scheduled post for October 26, 2026 at 03:14. Preserved.",
+    "LinkedIn composer independently verified Gregory Gvadzabia; first post text, image and alt text loaded and date committed as Fri Nov 20 10:00 AM.",
+    "Final LinkedIn Schedule action returned: We encountered a problem uploading your image. Returned to own draft; Scheduled (1) still refers to the preserved unrelated item. No CaseSprout queue entry or ID confirmed.",
+    "X @grishahq native queue contained one unrelated item for 2026-10-26 03:14 Gulf Standard Time; preserved.",
+    "X multi-post composer displayed a Schedule dialog; no claim that threads are unsupported. The full four-message first thread was entered; Save draft was requested. A later readback opened Something went wrong, but don\u2019t fret \u2014 it\u2019s not your fault. No schedule was submitted and draft persistence is unconfirmed."
   ],
-  "reservations": [],
+  "reservations": [
+    {
+      "project": "casesprout",
+      "platform": "linkedin",
+      "item": 1,
+      "datetime": "2026-11-20T10:00:00+04:00",
+      "state": "reserved",
+      "native_queue_before": "One unrelated recursive-llm item on 2026-10-26 03:14; preserved. Portfolio reservations honored.",
+      "account": "https://www.linkedin.com/in/gregogv/"
+    },
+    {
+      "project": "casesprout",
+      "platform": "linkedin",
+      "item": 2,
+      "datetime": "2026-11-23T10:00:00+04:00",
+      "state": "reserved",
+      "native_queue_before": "One unrelated recursive-llm item on 2026-10-26 03:14; preserved. Portfolio reservations honored.",
+      "account": "https://www.linkedin.com/in/gregogv/"
+    },
+    {
+      "project": "casesprout",
+      "platform": "linkedin",
+      "item": 3,
+      "datetime": "2026-11-25T10:00:00+04:00",
+      "state": "reserved",
+      "native_queue_before": "One unrelated recursive-llm item on 2026-10-26 03:14; preserved. Portfolio reservations honored.",
+      "account": "https://www.linkedin.com/in/gregogv/"
+    },
+    {
+      "project": "casesprout",
+      "platform": "linkedin",
+      "item": 4,
+      "datetime": "2026-11-27T10:00:00+04:00",
+      "state": "reserved",
+      "native_queue_before": "One unrelated recursive-llm item on 2026-10-26 03:14; preserved. Portfolio reservations honored.",
+      "account": "https://www.linkedin.com/in/gregogv/"
+    },
+    {
+      "project": "casesprout",
+      "platform": "linkedin",
+      "item": 5,
+      "datetime": "2026-11-30T10:00:00+04:00",
+      "state": "reserved",
+      "native_queue_before": "One unrelated recursive-llm item on 2026-10-26 03:14; preserved. Portfolio reservations honored.",
+      "account": "https://www.linkedin.com/in/gregogv/"
+    }
+  ],
   "scheduled_ids": [],
   "published_urls": [],
   "blockers": [
-    "Shared social lock is currently owned by toolcrop; do other work and retry exclusive acquisition later."
+    "LinkedIn native media upload rejected. Browser upload troubleshooting recommends enabling Allow access to file URLs in the ChatGPT Chrome extension; owner action requested before retry.",
+    "X native draft page returned a service/navigation error; no scheduled thread or persistent draft ID verified."
   ],
   "linkedin_account": {
     "name": "Gregory Gvadzabia",
@@ -25,5 +77,11 @@
     "handle": "@grishahq",
     "url": "https://x.com/grishahq",
     "verification": "Fresh CaseSprout-owned tab shows Profile -> x.com/grishahq and Account menu @grishahq."
+  },
+  "native_handoff": {
+    "linkedin_tab": "464263871",
+    "x_tab": "464263877",
+    "first_linkedin_reserved_datetime": "2026-11-20T10:00:00+04:00",
+    "x_draft_state": "save_requested_readback_unconfirmed"
   }
 }
